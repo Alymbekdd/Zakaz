@@ -1,0 +1,177 @@
+.About {
+    background: url('../img/IMG_0236\ \(1\)\ 1\ \(1\).png') center (center / cover);
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    height: 540px;
+
+    &__info {
+        background-color: white;
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        padding: 10px;
+        gap: 10px;
+        margin-left: 30%;
+
+        &-title {
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        &-subtitle {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        &-item {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+    }
+
+}
+
+@media(max-width:5000px){
+
+    .About__info-title {
+        font-size: 23px;
+    }
+ 
+    .About__info-subtitle {
+        font-size: 20px;
+    }
+
+    .About__info-item {
+        font-size: 20px;
+    }
+
+}
+
+@media(max-width:1200px){
+
+    .About {
+        height: 470px;
+    }
+
+    .About__info-title {
+        font-size: 23px;
+    }
+ 
+    .About__info-subtitle {
+        font-size: 19px;
+    }
+
+    .About__info-item {
+        font-size: 19px;
+    }
+
+}
+
+@media(max-width:1050px){
+
+    .About {
+        height: 420px;
+    }
+
+    .About__info-title {
+        font-size: 21px;
+    }
+ 
+    .About__info-subtitle {
+        font-size: 17px;
+    }
+
+    .About__info-item {
+        font-size: 17px;
+    }
+
+}
+
+@media(max-width:920px){
+
+    .About {
+        height: 365px;
+    }
+ 
+    .About__info-subtitle {
+        font-size: 16px;
+    }
+
+    .About__info-item {
+        font-size: 16px;
+    }
+
+}
+
+@media(max-width:870px){
+    
+    .About__info-title {
+        font-size: 20px;
+    }
+ 
+    .About__info-subtitle {
+        font-size: 15px;
+    }
+
+    .About__info-item {
+        font-size: 15px;
+    }
+
+}
+
+@media(max-width:785px){
+
+    .About {
+        height: 300px;
+    }
+    
+    .About__info-title {
+        font-size: 18px;
+    }
+ 
+    .About__info-subtitle {
+        font-size: 14px;
+    }
+
+    .About__info-item {
+        font-size: 14px;
+    }
+
+}
+
+@media(max-width:640px){
+
+    .About {
+        height: 355px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .About {
+        height: 345px;
+    }
+
+    .About__info {
+       margin: 0 auto;
+       width: 90%;
+    }
+
+}
+
+@media(max-width:430px){
+
+    .About {
+        height: 420px;
+    }
+
+}

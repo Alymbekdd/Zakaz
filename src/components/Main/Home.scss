@@ -1,0 +1,100 @@
+.Home {
+    height: 570px;
+    background: url('../img/IMG_0218\ 1.png') center (center / cover);
+    display: flex;
+    align-items: center;
+
+        h1 {
+            color: rgb(255, 255, 255);
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 32px;
+            text-align: center;
+        }
+
+        p {
+            color: rgb(255, 255, 255);
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            text-align: center;
+        }
+
+}
+
+@media(max-width:5000px){
+ 
+    .Home h1 {
+        font-size: 40px;
+    }
+
+    .Home p {
+        font-size: 28px;
+    }
+
+}
+
+@media(max-width:1496px){
+
+    .Home {
+        height: 547px;
+    }
+ 
+    .Home h1 {
+        font-size: 40px;
+    }
+
+    .Home p {
+        font-size: 28px;
+    }
+
+}
+
+@media(max-width:1200px){
+
+    .Home {
+        height: 438px;
+    }
+
+    .Home h1 {
+        font-size: 40px;
+    }
+
+    .Home p {
+        font-size: 28px;
+    }
+
+}
+
+@media(max-width:970px){
+
+    .Home {
+        height: 345px;
+    }
+}
+
+@media(max-width:630px){
+
+    .Home h1 {
+        font-size: 30px;
+    }
+
+    .Home p {
+        font-size: 20px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .Home {
+        height: 270px;
+    }
+    
+}
+
+@media (max-width: 380px) {
+    .Home {
+        height: 235px;
+    }
+}

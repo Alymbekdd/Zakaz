@@ -1,0 +1,147 @@
+.Header {
+    background-color: rgb(0, 0, 0);
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        p {
+            color: white;
+            font-size: 19px;
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+        }
+
+        &-inputs {
+            width: 170px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            border-radius: 60px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        input {
+            width: 100%;
+            text-align: center;
+            border: none;
+            outline: none;
+        }
+
+        img {
+            width: 24px;
+        }
+
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        p {
+            color: white;
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        &-img {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        img {
+            width: 27px;
+        }
+
+    }
+
+
+}
+
+@media(max-width:630px){
+
+        .Header__info-inputs {
+                width: 130px;
+            }
+
+    .Header__info {
+        gap: 10px;
+    }
+
+    .Header__content {
+        gap: 10px;
+    }
+
+    .Header__content-img {
+        gap: 5px;
+    }
+
+}
+
+@media(max-width:540px){
+
+    .Header__info-inputs {
+        width: 115px;
+    }
+
+    .Header__info {
+        gap: 10px;
+    }
+
+    .Header__content {
+        gap: 10px;
+    }
+
+    .Header__content-img {
+        gap: 5px;
+    }
+
+    .Header__info-lupa {
+        width: 20px;
+    }
+
+
+}
+
+@media(max-width:520px){
+
+    .Header__info p {
+        display: none;
+    }
+
+}
+
+@media(max-width:375px){
+
+    .Header__info-inputs {
+        width: 90px;
+    }
+
+    .Header__content {
+        gap: 5px;
+    }
+
+    .Header__content img {
+        width: 24px;
+    }
+
+    .Header__content p {
+        font-size: 13px;
+    }
+
+}

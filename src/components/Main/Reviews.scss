@@ -1,0 +1,51 @@
+.Reviews {
+    margin-top: 40px;
+
+&__otzw {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+&__headline {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+&__items {
+    display: flex;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+&__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        width: 40px;
+    }
+
+    p {
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+}
+
+&__info {
+    background-color: rgb(216, 216, 216);
+    padding: 5px;
+
+    p {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+}
+
+}
