@@ -3,7 +3,7 @@
     &__content {
         display: flex;
         justify-content: center;
-        margin-top: 40px;
+        margin-top: 30px;
         gap: 10%;
         flex-wrap: wrap;
     }
@@ -200,6 +200,7 @@
             border: 1px solid;
             background-color: white;
             border-color: black;
+            color: black;
             cursor: pointer;
 
             &:hover {
