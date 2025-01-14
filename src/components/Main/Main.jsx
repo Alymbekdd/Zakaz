@@ -134,7 +134,7 @@ const Main = () => {
                                     <p className='Shop__items-subtitle'>{item.title}</p>
                                     <div className='Shop__items-line'></div>
                                     <div className="Shop__items-btns">
-                                        <p className='Shop__items-price'>{item.price}</p>
+                                        <p className='Shop__items-price'>{item.price} сом</p>
                                         <Link to={'/Buy'}>
                                             <button className='Shop__items-btn'>Заказать</button>
                                         </Link>
