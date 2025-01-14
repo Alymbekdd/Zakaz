@@ -1,11 +1,91 @@
-import React from 'react';
+import { useState } from 'react';
 import icon from '../img/png-klev-club-gikq-p-ikonka-garantiya-kachestva-png-6 1.png';
 import logo from '../img/Снимок_экрана_2024-12-17_000646-removebg-preview (2).png';
 import wallet from '../img/png-transparent-computer-icons-credit-card-card-security-code-debit-card-credit-card-text-logo-sign-removebg-preview 1 (1).png';
 import item from '../img/H20c9d9bb99974e729c20451549fd58cfD.jpg_640x640.avif';
 import human from '../img/6596121 1.png';
+import { Link } from "react-router-dom";
+
 
 const Main = () => {
+
+    const [tovar, setTovar] = useState([
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        },
+        {
+            id: 1,
+            name: "нижнее белье",
+            title: "Хорошое качество",
+            price: 670,
+            img: item,
+        }
+    ])
+
+
+
+
+
     return (
         <main className='Main'>
 
@@ -46,128 +126,23 @@ const Main = () => {
                     <h1 className='Shop__headline'>Наши товары</h1>
 
                     <div className="Shop__page">
+                        {tovar.map((item, idx) => {
+                            return (
+                                <div className="Shop__items">
+                                    <img src={item.img} alt="" />
+                                    <p className='Shop__items-title'>{item.name}</p>
+                                    <p className='Shop__items-subtitle'>{item.title}</p>
+                                    <div className='Shop__items-line'></div>
+                                    <div className="Shop__items-btns">
+                                        <p className='Shop__items-price'>{item.price}</p>
+                                        <Link to={'/Buy'}>
+                                            <button className='Shop__items-btn'>Заказать</button>
+                                        </Link>
 
-                        <div className="Shop__items">
-                            <img src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-                        <div className="Shop__items">
-                            <img className='Shop__items-item' src={item} alt="item" />
-                            <p className='Shop__items-title'>Женские нижние белья</p>
-                            <p className='Shop__items-subtitle'>Хорошее качество</p>
-                            <div className='Shop__items-line'></div>
-                            <div className="Shop__items-btns">
-                                <p className='Shop__items-price'>270 сом</p>
-                                <button className='Shop__items-btn'>Заказать</button>
-                            </div>
-                        </div>
-
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
 
                 </div>
@@ -186,9 +161,9 @@ const Main = () => {
             <section className='Reviews'>
                 <div className="container">
                     <div className="Reviews__otzw">
-                        
+
                         <h1 className='Reviews__headline'>Отзывы клиентов</h1>
-                     
+
                         <div className="Reviews__items">
                             <div className="Reviews__content">
                                 <img src={human} alt="human" />

@@ -2,7 +2,7 @@ import React from 'react'
 import lupa from '../img/magnifying_glass_magnifier_search_icon_208236 1.png';
 import card from '../img/IMG_0232 1.png'
 import icon from '../img/IMG_0221 1.png'
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -19,7 +19,9 @@ const Header = () => {
           </div>
 
           <div className='Header__content'>
-            <p>главная</p>
+            <Link to={'/'}>
+              <p>главная</p>
+            </Link>
             <p>контакты</p>
             <div className="Header__content-img">
               <img src={card} alt="" />
