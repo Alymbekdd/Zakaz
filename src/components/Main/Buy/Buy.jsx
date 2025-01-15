@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 import item from '../../img/H20c9d9bb99974e729c20451549fd58cfD.jpg_640x640.avif';
 import icon from '../../img/png-klev-club-gikq-p-ikonka-garantiya-kachestva-png-6 1.png';
 import logo from '../../img/Снимок_экрана_2024-12-17_000646-removebg-preview (2).png';
@@ -7,14 +8,23 @@ import human from '../../img/6596121 1.png';
 
 const Buy = () => {
     return (
-        <main className='buy'>
-
-            <section className='SingleItem'>
+        <main className='Buy'>
                 <div className="container">
-                    <h1>Оформляйте покупки быстро и надежно
+                    <h1 className='Buy__title'>Оформляйте покупки быстро и надежно
                     </h1>
+                <div className='Buy__nav'>
+                    <Link to={'/'}>
+                        <p>Главная</p>
+                    </Link>
+                    <p>/</p>
+                    <p>Корзина</p>
+                    <p>/</p>
+                    <p>Регистрация</p>
+                    <p>/</p>
+                    <p>Войти</p>
+                </div>
 
-                    <div className='SingleItem__content'>
+                    <section className='SingleItem__content'>
                         <div className="SingleItem__photos">
                             <div>
                                 <img src={item} alt="item" />
@@ -53,9 +63,8 @@ const Buy = () => {
                                 <button className="SingleItem__btns-btn">Заказать</button>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </section>
 
             <section className='About'>
                 <div className="container">
@@ -109,7 +118,7 @@ const Buy = () => {
                     </div>
                 </div>
             </section>
-            
+
             <section className='Rewiews'>
                 <div className="container">
                     <div className="Rewiews__otzw">

@@ -147,12 +147,24 @@ const Main = () => {
                                     <p className='Shop__items-price'>{item.price} сом</p>
                                     <p className='Shop__items-title'>{item.name}</p>
                                     <p className='Shop__items-subtitle'>{item.title}</p>
-                                        <Link to={'/Buy'}>
-                                            <button className='Shop__items-btn'>Заказать</button>
-                                        </Link>
+                                    <Link to={'/Buy'}>
+                                        <button className='Shop__items-btn'>Заказать</button>
+                                    </Link>
                                 </div>
                             )
                         })}
+                    </div>
+
+                    <div className='Shop__nav'>
+                        <Link to={'/'}>
+                            <p>Главная</p>
+                        </Link>
+                        <p>/</p>
+                        <p>Корзина</p>
+                        <p>/</p>
+                        <p>Регистрация</p>
+                        <p>/</p>
+                        <p>Войти</p>
                     </div>
 
                 </div>

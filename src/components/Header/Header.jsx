@@ -20,9 +20,9 @@ const Header = () => {
 
           <div className='Header__content'>
             <Link to={'/'}>
-              <p>главная</p>
+              <p>Главная</p>
             </Link>
-            <p>контакты</p>
+            <p>Контакты</p>
             <div className="Header__content-img">
               <img src={card} alt="" />
               <img src={icon} alt="" />

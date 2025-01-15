@@ -1,19 +1,35 @@
-.SingleItem {
-
-    &__content {
+.Buy {
+    
+    &__nav {
         display: flex;
         justify-content: center;
-        margin-top: 30px;
-        gap: 10%;
-        flex-wrap: wrap;
+        margin-top: 10px;
+        gap: 10px;
+
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgb(128, 128, 128);
+        cursor: pointer;
     }
 
-    h1 {
+    &__title {
         margin-top: 20px;
         text-align: center;
         font-family: "Inter", sans-serif;
         font-weight: 700;
         font-size: 17px;
+    }
+}
+
+.SingleItem {
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10%;
+        flex-wrap: wrap;
     }
 
     &__photos {
@@ -64,14 +80,14 @@
             font-family: "Inter", sans-serif;
             font-weight: 400;
             font-size: 14px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         &-price {
             font-family: "Inter", sans-serif;
             font-weight: 600;
             font-size: 13px;
-            margin-top: 25px;
+            margin-top: 15px;
         }
 
     }
@@ -212,7 +228,7 @@
     &__btns {
         display: flex;
         margin-top: 10px;
-        gap: 20px;
+        gap: 10px;
 
         &-cart {
             width: 80px;
@@ -356,7 +372,7 @@
 }
 
 .Rewiews {
-    margin-top: 90px;
+    margin-top: 70px;
 
 &__otzw {
     display: flex;
@@ -372,7 +388,7 @@
 
 &__items {
     display: flex;
-    margin: 0 auto;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -395,6 +411,7 @@
 
 &__info {
     background-color: rgb(226, 226, 226);
+    width: 70%;
     border-radius: 10px;
     padding: 7px;
 
@@ -407,6 +424,7 @@
 }
 
 }
+
 
 @media(max-width:3000px){
     .SingleItem__photos-img {
@@ -470,4 +488,9 @@
     }
 }
 
+@media(max-width:375px){
 
+    .Buy__nav {
+        font-size: 13px;
+    }
+}
