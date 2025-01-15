@@ -144,16 +144,12 @@ const Main = () => {
                             return (
                                 <div className="Shop__items">
                                     <img src={item.img} alt="" />
+                                    <p className='Shop__items-price'>{item.price} сом</p>
                                     <p className='Shop__items-title'>{item.name}</p>
                                     <p className='Shop__items-subtitle'>{item.title}</p>
-                                    <div className='Shop__items-line'></div>
-                                    <div className="Shop__items-btns">
-                                        <p className='Shop__items-price'>{item.price} сом</p>
                                         <Link to={'/Buy'}>
                                             <button className='Shop__items-btn'>Заказать</button>
                                         </Link>
-
-                                    </div>
                                 </div>
                             )
                         })}
