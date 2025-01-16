@@ -1,10 +1,10 @@
 .Cart {
+    margin-top: 15px;
 
     &__title {
         font-family: "Inter", sans-serif;
         font-weight: 600;
         font-size: 27px;
-        margin-top: 10px;
     }
 
     &__count {
@@ -27,11 +27,13 @@
         width: 100%;
         display: flex;
         border: 1px solid;
+        border-radius: 7px;
         padding: 7px 10px;
         gap: 20px;
 
         img {
             width: 100px;
+            border-radius: 7px;
         }
     }
 
@@ -39,6 +41,10 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+
+        &-link {
+            text-decoration-line: none;
+        }
 
         &-info {
             display: flex;
@@ -97,5 +103,58 @@
 
     }
 
+
+}
+
+@media(max-width:540px) {
+
+    .Menu__content {
+        flex-direction: column;
+    }
+
+    .Menu__content-btns {
+        flex-direction: row;
+    }
+
+    .Menu__items {
+        height: 140px;
+    }
+
+    .Menu__items img {
+        height: 100px;
+    }
+
+}
+
+@media(max-width:400px) {
+
+    .Menu__items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 335px;
+        padding-top: 10px;
+    }
+
+    .Menu {
+        gap: 15px;
+    }
+
+    .Menu__content {
+        gap: 20px;
+    }
+
+    .Menu__items img {
+        width: 170px;
+        height: 170px;
+    }
+
+    .Menu__content-btn {
+        width: 130px;
+    }
+
+    .Menu__content-delite {
+        width: 130px;
+    }
 
 }
