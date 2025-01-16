@@ -19,13 +19,13 @@ const Header = () => {
           </div>
 
           <div className='Header__content'>
-            <Link to={'/'}>
+            <Link className='Header__content-link' to={'/'}>
               <p>Главная</p>
             </Link>
             <p>Контакты</p>
             <div className="Header__content-img">
-              <img src={card} alt="" />
-              <img src={icon} alt="" />
+              <Link to={'/Cart'}><img src={card} alt="" /></Link>
+              <Link to={'/Cart'}><img src={icon} alt="" /></Link>
             </div>
           </div>
 

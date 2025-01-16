@@ -104,37 +104,40 @@ const Main = () => {
         <main className='main'>
 
             <section className='Home'>
-                <div className="container">
-                    <h1>Онлайн магазин</h1>
-                    <p>Женские нижние белья</p>
-                </div>
+                <h1>Онлайн магазин</h1>
+                <p>Женские нижние белья</p>
             </section>
 
-            <section className='Shop'>
-                <div className="container">
+            <div className="container">
+
+                <section className='Shop'>
 
                     <div className="Shop__info">
-                        <div className="Shop__content">
-                            <img className='Shop__content-icon' src={icon} alt="icon" />
-                            <div className="Shop__content-list">
-                                <p className='Shop__list-text'>Гарантия качества 100%</p>
-                                <p className='Shop__list-subject'>Товары наилучшего качества</p>
+                        
+                        <div className="Shop__info-content">
+                            <img className='Shop__info-icon' src={icon} alt="icon" />
+                            <div>
+                                <p className='Shop__info-text'>Гарантия качества 100%</p>
+                                <p className='Shop__info-subject'>Товары наилучшего качества</p>
                             </div>
                         </div>
-                        <div className="Shop__content">
-                            <img className='Shop__content-logo' src={logo} alt="logo" />
-                            <div className="Shop__content-list">
-                                <p className='Shop__list-text'>Бесплатная доставка</p>
-                                <p className='Shop__list-subject'>Быстрая и надёжная доставка</p>
+
+                        <div className="Shop__info-content">
+                            <img className='Shop__info-logo' src={logo} alt="logo" />
+                            <div>
+                                <p className='Shop__info-text'>Бесплатная доставка</p>
+                                <p className='Shop__info-subject'>Быстрая и надёжная доставка</p>
                             </div>
                         </div>
-                        <div className="Shop__content">
-                            <img className='Shop__content-wallet' src={wallet} alt="wallet" />
-                            <div className="Shop__content-list">
-                                <p className='Shop__list-text'>Удобные способы оплаты</p>
-                                <p className='Shop__list-subject'>Оплачивайте заказы легко</p>
+
+                        <div className="Shop__info-content">
+                            <img className='Shop__info-wallet' src={wallet} alt="wallet" />
+                            <div>
+                                <p className='Shop__info-text'>Удобные способы оплаты</p>
+                                <p className='Shop__info-subject'>Оплачивайте заказы легко</p>
                             </div>
                         </div>
+
                     </div>
 
                     <h1 className='Shop__headline'>Наши товары</h1>
@@ -142,13 +145,13 @@ const Main = () => {
                     <div className="Shop__page">
                         {tovar.map((item, idx) => {
                             return (
-                                <div className="Shop__items">
-                                    <img src={item.img} alt="" />
-                                    <p className='Shop__items-price'>{item.price} сом</p>
-                                    <p className='Shop__items-title'>{item.name}</p>
-                                    <p className='Shop__items-subtitle'>{item.title}</p>
-                                    <Link to={'/Buy'}>
-                                        <button className='Shop__items-btn'>Заказать</button>
+                                <div className="Shop__page-items">
+                                    <img className='Shop__page-img' src={item.img} alt="" />
+                                    <p className='Shop__page-price'>{item.price} сом</p>
+                                    <p className='Shop__page-title'>{item.name}</p>
+                                    <p className='Shop__page-subtitle'>{item.title}</p>
+                                    <Link className='Shop__page-link' to={'/Buy'}>
+                                        <button className='Shop__page-btn'>Заказать</button>
                                     </Link>
                                 </div>
                             )
@@ -156,70 +159,63 @@ const Main = () => {
                     </div>
 
                     <div className='Shop__nav'>
-                        <Link to={'/'}>
+                        <Link className='Shop__nav-link' to={'/'}>
                             <p>Главная</p>
                         </Link>
                         <p>/</p>
-                        <p>Корзина</p>
+                        <Link className='Shop__nav-link' to={'/Cart'}>
+                            <p>Корзина</p>
+                        </Link>
                         <p>/</p>
                         <p>Регистрация</p>
                         <p>/</p>
                         <p>Войти</p>
                     </div>
 
-                </div>
-            </section>
+                </section>
 
-            <section className='AboutUs'>
-                <div className="container">
-                    <div className="AboutUs__info">
-                        <p className='AboutUs__info-title'>О нас</p>
-                        <p className='AboutUs__info-subtitle'>Одежда, пожалуй, основная часть гардероба каждого человека. Ни один женский шкаф не бывает пустым, скорее он переполнен. Современные мужчины любят хорошо одеваться и зачастую одежды у них не меньше, чем у прекрасной половины человечества.</p>
-                        <p className='AboutUs__info-item'> Мы рады предложить Вам обилие товаров от самых разных брендов. Мы постарались включить в наши каталоги весь возможный ассортимент: юбки и брюки, джинсы и платья, одежду для беременных и домашнюю одежду, верхнюю одежду и пляжные аксессуары... Просто загляните в перечень товаров и Вы сами будете удивлены количеством предлагаемых моделей.</p>
+                <section className='AboutUs'>
+                    <p className='AboutUs__title'>О нас</p>
+                    <p className='AboutUs__subtitle'>Одежда, пожалуй, основная часть гардероба каждого человека. Ни один женский шкаф не бывает пустым, скорее он переполнен. Современные мужчины любят хорошо одеваться и зачастую одежды у них не меньше, чем у прекрасной половины человечества.</p>
+                    <p className='AboutUs__item'> Мы рады предложить Вам обилие товаров от самых разных брендов. Мы постарались включить в наши каталоги весь возможный ассортимент: юбки и брюки, джинсы и платья, одежду для беременных и домашнюю одежду, верхнюю одежду и пляжные аксессуары... Просто загляните в перечень товаров и Вы сами будете удивлены количеством предлагаемых моделей.</p>
+                </section>
+
+                <section className='Reviews'>
+                    <h1 className='Reviews__headline'>Отзывы клиентов</h1>
+
+                    <div className="Reviews__items">
+                        <div className="Reviews__items-content">
+                            <img src={human} alt="human" />
+                            <p>user</p>
+                        </div>
+                        <div className="Reviews__items-info">
+                            <p>Уже не первый год совершаю покупки именно в этом магазине, так как только здесь всегда одежда из новых коллекций мировых дизайнеров. Да и ценовая политика приемлемая, в отличии от других подобных магазинов, например shopbop. Сервис работает профессионально, менеджеры всегда ответят на интересующие вопросы, помогут с выбором. С доставкой были только какие то непонятки...Задержали мой заказ и пришлось ждать!</p>
+                        </div>
                     </div>
-                </div>
-            </section>
 
-            <section className='Reviews'>
-                <div className="container">
-                    <div className="Reviews__otzw">
-
-                        <h1 className='Reviews__headline'>Отзывы клиентов</h1>
-
-                        <div className="Reviews__items">
-                            <div className="Reviews__content">
-                                <img src={human} alt="human" />
-                                <p>user</p>
-                            </div>
-                            <div className="Reviews__info">
-                                <p>Уже не первый год совершаю покупки именно в этом магазине, так как только здесь всегда одежда из новых коллекций мировых дизайнеров. Да и ценовая политика приемлемая, в отличии от других подобных магазинов, например shopbop. Сервис работает профессионально, менеджеры всегда ответят на интересующие вопросы, помогут с выбором. С доставкой были только какие то непонятки...Задержали мой заказ и пришлось ждать!</p>
-                            </div>
+                    <div className="Reviews__items">
+                        <div className="Reviews__items-content">
+                            <img src={human} alt="human" />
+                            <p>user</p>
                         </div>
-
-                        <div className="Reviews__items">
-                            <div className="Reviews__content">
-                                <img src={human} alt="human" />
-                                <p>user</p>
-                            </div>
-                            <div className="Reviews__info">
-                                <p>Уже не первый год совершаю покупки именно в этом магазине, так как только здесь всегда одежда из новых коллекций мировых дизайнеров. Да и ценовая политика приемлемая, в отличии от других подобных магазинов, например shopbop. Сервис работает профессионально, менеджеры всегда ответят на интересующие вопросы, помогут с выбором. С доставкой были только какие то непонятки...Задержали мой заказ и пришлось ждать!</p>
-                            </div>
+                        <div className="Reviews__items-info">
+                            <p>Уже не первый год совершаю покупки именно в этом магазине, так как только здесь всегда одежда из новых коллекций мировых дизайнеров. Да и ценовая политика приемлемая, в отличии от других подобных магазинов, например shopbop. Сервис работает профессионально, менеджеры всегда ответят на интересующие вопросы, помогут с выбором. С доставкой были только какие то непонятки...Задержали мой заказ и пришлось ждать!</p>
                         </div>
-
-                        <div className="Reviews__items">
-                            <div className="Reviews__content">
-                                <img src={human} alt="human" />
-                                <p>user</p>
-                            </div>
-                            <div className="Reviews__info">
-                                <p>Уже не первый год совершаю покупки именно в этом магазине, так как только здесь всегда одежда из новых коллекций мировых дизайнеров. Да и ценовая политика приемлемая, в отличии от других подобных магазинов, например shopbop. Сервис работает профессионально, менеджеры всегда ответят на интересующие вопросы, помогут с выбором. С доставкой были только какие то непонятки...Задержали мой заказ и пришлось ждать!</p>
-                            </div>
-                        </div>
-
                     </div>
-                </div>
-            </section>
 
+                    <div className="Reviews__items">
+                        <div className="Reviews__items-content">
+                            <img src={human} alt="human" />
+                            <p>user</p>
+                        </div>
+                        <div className="Reviews__items-info">
+                            <p>Уже не первый год совершаю покупки именно в этом магазине, так как только здесь всегда одежда из новых коллекций мировых дизайнеров. Да и ценовая политика приемлемая, в отличии от других подобных магазинов, например shopbop. Сервис работает профессионально, менеджеры всегда ответят на интересующие вопросы, помогут с выбором. С доставкой были только какие то непонятки...Задержали мой заказ и пришлось ждать!</p>
+                        </div>
+                    </div>
+                    
+                </section>
+
+            </div>
         </main>
     )
 }

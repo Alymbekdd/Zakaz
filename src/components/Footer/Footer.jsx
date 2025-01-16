@@ -51,6 +51,7 @@ const Footer = () => {
                         <p>Доставка</p>
                         <p>Другое</p>
                     </div>
+                    
                 </div>
 
                 <div className="Footer__linya"></div>

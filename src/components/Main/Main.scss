@@ -2,7 +2,8 @@
     height: 570px;
     background: url('../img/IMG_0218\ 1.png') center (center / cover);
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 
         h1 {
             color: rgb(255, 255, 255);
@@ -23,18 +24,21 @@
 }
 
 .Shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 70px;
 
     &__info {
         display: flex;
+        width: 100%;
         justify-content: space-between;
-        margin: 0 auto;
-    }
 
-    &__content {
-        display: flex;
-        align-items: center;
-        gap: 7px;
+        &-content {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
 
         &-icon {
             width: 30px;
@@ -51,10 +55,6 @@
             height: 27px;
         }
 
-    }
-
-    &__list {
-
         &-text {
             font-family: "Inter", sans-serif;
             font-weight: 700;
@@ -70,27 +70,24 @@
 
     }
 
-
-
-
-
     &__headline {
         font-family: "Inter", sans-serif;
         font-weight: 700;
-        text-align: center;
         margin-top: 70px;
     }
 
     &__page {
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-    }
 
-    &__items {
-        margin-top: 35px;
+        &-items {
+            margin-top: 35px;
+        }
 
-        img {
+        
+        &-img {
             width: 235px;
             border-radius: 10px;
         }
@@ -134,6 +131,10 @@
             }
         }
 
+        &-link {
+            text-decoration-line: none;
+        }
+    
     }
 
     &__nav {
@@ -141,62 +142,54 @@
         justify-content: center;
         margin-top: 50px;
         gap: 10px;
-
         font-family: "Inter", sans-serif;
         font-weight: 400;
         font-size: 14px;
-        color: rgb(128, 128, 128);
         cursor: pointer;
+        color: rgb(128, 128, 128);
+
+        &-link {
+            text-decoration-line: none;
+            color: rgb(128, 128, 128);
+        }
     }
 
 }
 
 .AboutUs {
-    margin-top: 4%;
+    margin: 35px auto;
+    width: 80%;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 5px;
 
-    &__info {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-        border-radius: 20px;
-        padding: 10px;
-        gap: 5px;
-
-        &-title {
+        &__title {
             font-family: "Inter", sans-serif;
             font-weight: 600;
             font-size: 19px;
         }
 
-        &-subtitle {
+        &__subtitle {
             font-family: "Inter", sans-serif;
             font-weight: 400;
             font-size: 15px;
         }
 
-        &-item {
+        &__item {
             font-family: "Inter", sans-serif;
             font-weight: 400;
             font-size: 15px;
             margin-top: 5px;
         }
 
-    }
-
 }
 
 .Reviews {
     margin-top: 70px;
-
-&__otzw {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
 
 &__headline {
     text-align: center;
@@ -208,43 +201,41 @@
     display: flex;
     justify-content: center;
     gap: 15px;
-}
 
-&__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    img {
-        width: 40px;
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        img {
+            width: 40px;
+        }
+    
+        p {
+            font-family: "Inter", sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+        }
+    
     }
 
-    p {
-        font-family: "Inter", sans-serif;
-        font-weight: 500;
-        font-size: 13px;
+    &-info {
+        background-color: rgb(226, 226, 226);
+        width: 100%;
+        border-radius: 10px;
+        padding: 7px;
+    
+        p {
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+        }
+    
     }
-
-}
-
-&__info {
-    background-color: rgb(226, 226, 226);
-    width: 70%;
-    border-radius: 10px;
-    padding: 7px;
-
-    p {
-        font-family: "Inter", sans-serif;
-        font-weight: 400;
-        font-size: 13px;
-    }
-
+    
 }
 
 }
-
-
-
 
 @media(max-width:3000px){
  
@@ -257,14 +248,12 @@
     }
 
 }
-
 @media(max-width:1080px){
 
-    .Shop__items img {
+    .Shop__page-img {
         width: 210px;
     }
 }
-
 @media(max-width:970px){
 
     .Home {
@@ -272,7 +261,6 @@
     }
 
 }
-
 @media(max-width:745px){
 
     .Shop__info {
@@ -281,12 +269,12 @@
         gap: 30px;
     }
 
-    .Shop__content-icon {
+    .Shop__info-icon {
         width: 33px;
         height: 33px;
     }
 
-    .Shop__content-logo {
+    .Shop__info-logo {
         width: 43px;
         height: 28px;
     }
@@ -298,9 +286,8 @@
     }
     
 }
-
 @media (max-width: 520px) {
-    .Shop__items img {
+    .Shop__page-img {
         width: 170px;
     }
 
@@ -310,13 +297,11 @@
         gap: 5%;
     }
 }
-
 @media (max-width: 480px) {
     .Home {
         height: 380px;
     }
 }
-
 @media(max-width:400px){
     .Home h1 {
         font-size: 35px;
@@ -326,14 +311,13 @@
         font-size: 25px;
     }
 
-    .Shop__items img {
+    .Shop__page-img {
         width: 160px;
     }
 }
-
 @media(max-width:375px){
 
-    .Shop__items img {
+    .Shop__page-img {
         width: 250px;
     }
 

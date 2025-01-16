@@ -1,7 +1,8 @@
 .Header {
     background-color: rgb(0, 0, 0);
-    padding-top: 15px;
-    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    height: 50px;
 
     &__nav {
         display: flex;
@@ -49,27 +50,30 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        color: white;
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
 
-        p {
+        &-link {
+            text-decoration-line: none;
             color: white;
-            font-family: "Inter", sans-serif;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
         }
+
 
         &-img {
             display: flex;
             align-items: center;
             gap: 10px;
+
+            img {
+                width: 27px;
+            }
         }
 
-        img {
-            width: 27px;
-        }
-
+ 
     }
-
 
 }
 
@@ -92,7 +96,6 @@
     }
 
 }
-
 @media(max-width:540px) {
 
     .Header__info-inputs {
@@ -117,7 +120,6 @@
 
 
 }
-
 @media(max-width:520px) {
 
     .Header__info p {
@@ -125,7 +127,6 @@
     }
 
 }
-
 @media(max-width:375px) {
 
     .Header__info-inputs {
