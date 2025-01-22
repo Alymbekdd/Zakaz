@@ -22,7 +22,7 @@ const Cart = ({cart, setCart}) => {
         <section className='Menu'>
 
           {cart.length === 0 ? (
-            <p className='Menu__none'>Пусто</p>
+            <p className='Menu__pusto'>Пусто</p>
           ) : (
             cart.map((item, idx) => (
               <div key={idx} className="Menu__items">
