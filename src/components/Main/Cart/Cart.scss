@@ -12,6 +12,7 @@
         font-weight: 400;
         font-size: 14px;
         color: rgb(81, 81, 81);
+        margin-top: 2px;
     }
 
 }
@@ -22,6 +23,13 @@
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+
+    &__none {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgb(80, 80, 80);
+    }
 
     &__items {
         width: 100%;
@@ -54,7 +62,7 @@
             h3 {
                 font-family: "Inter", sans-serif;
                 font-weight: 600;
-                font-size: 17px;
+                font-size: 16px;
             }
 
             p {
@@ -162,3 +170,14 @@
 
 }
 
+@media(max-width:340px) {
+
+    .Menu__items {
+        padding: 5px 5px;
+    }
+
+    .Menu__content-info h3 {
+        font-size: 11px;
+    }
+
+}

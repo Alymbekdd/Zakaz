@@ -1,103 +1,398 @@
-import { useState } from 'react';
+import React, {useEffect, useState } from "react";
 import icon from '../img/png-klev-club-gikq-p-ikonka-garantiya-kachestva-png-6 1.png';
 import logo from '../img/Снимок_экрана_2024-12-17_000646-removebg-preview (2).png';
 import wallet from '../img/png-transparent-computer-icons-credit-card-card-security-code-debit-card-credit-card-text-logo-sign-removebg-preview 1 (1).png';
-import item from '../img/H20c9d9bb99974e729c20451549fd58cfD.jpg_640x640.avif';
 import human from '../img/6596121 1.png';
 import { Link } from "react-router-dom";
+import item from '../img/H20c9d9bb99974e729c20451549fd58cfD.jpg_640x640.avif';
+import item2 from '../img/images (1).png';
+import item3 from '../img/png-klev-club-qqbw-p-tsifra-3-png-3.png';
+import item4 from '../img/images (2).png';
 
-
-const Main = () => {
+const Main = ({cart, setCart }) => {
 
     const [tovar, setTovar] = useState([
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 1,
+          name: "товар 1",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 2,
+          name: "товар 2",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 3,
+          name: "товар 3",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 4,
+          name: "товар 4",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 5,
+          name: "товар 5",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 6,
+          name: "товар 6",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 7,
+          name: "товар 7",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 8,
+          name: "товар 8",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 9,
+          name: "товар 9",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 10,
+          name: "товар 10",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 11,
+          name: "товар 11",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         },
         {
-            id: 1,
-            name: "нижнее белье",
-            title: "Хорошое качество",
-            price: 670,
-            img: item,
+          id: 12,
+          name: "товар 12",
+          title: "Хорошое качество",
+          price: 670,
+          description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
+          images: [
+            item,
+            item2,
+            item3,
+            item4,
+          ],
+          availableSizes: [
+            { size: 'S', available: true },
+            { size: 'M', available: true },
+            { size: 'L', available: true },
+            { size: 'XL', available: true },
+            { size: 'XLL', available: true },
+          ],
+          about: [
+            "Бренд: zara",
+            "Материал: Ангора",
+            "Состав: 85% ангора",
+          ],
+          chistka: [
+            "Только ручная стирка",
+            "Не отбеливать",
+            "Гладить запрещено",
+            "Барабанная сушка запрещена",
+          ],
         }
-    ])
+      ]);
 
-
-
+    const addToCart = (product) => {
+        if (cart.some((item) => item.id === product.id)) {
+            alert('Этот товар уже в корзине');
+            return;
+        }
+        setCart([...cart, product]);
+    };
 
 
     return (
@@ -105,7 +400,7 @@ const Main = () => {
 
             <section className='Home'>
                 <h1>Онлайн магазин</h1>
-                <p>Женские нижние белья</p>
+                <p>Одежда</p>
             </section>
 
             <div className="container">
@@ -143,16 +438,17 @@ const Main = () => {
                     <h1 className='Shop__headline'>Наши товары</h1>
 
                     <div className="Shop__page">
-                        {tovar.map((item, idx) => {
+                        {tovar.map((product, idx) => {
                             return (
                                 <div className="Shop__page-items">
-                                    <img className='Shop__page-img' src={item.img} alt="" />
-                                    <p className='Shop__page-price'>{item.price} сом</p>
-                                    <p className='Shop__page-title'>{item.name}</p>
-                                    <p className='Shop__page-subtitle'>{item.title}</p>
-                                    <Link className='Shop__page-link' to={'/Buy'}>
+                                    <img className='Shop__page-img' src={product.images[0]} alt="" />
+                                    <p className='Shop__page-price'>{product.price} сом</p>
+                                    <p className='Shop__page-title'>{product.name}</p>
+                                    <p className='Shop__page-subtitle'>{product.title}</p>
+                                    <Link className='Shop__page-link' to={`/Buy/${product.id}`}>
                                         <button className='Shop__page-btn'>Заказать</button>
                                     </Link>
+                                    <button onClick={() => addToCart(product)} className='Shop__page-cart'>В корзину</button>
                                 </div>
                             )
                         })}

@@ -25,7 +25,7 @@ const Header = () => {
             <p>Контакты</p>
             <div className="Header__content-img">
               <Link to={'/Cart'}><img src={card} alt="" /></Link>
-              <Link to={'/Cart'}><img src={icon} alt="" /></Link>
+              <Link to={'/Reg'}><img src={icon} alt="" /></Link>
             </div>
           </div>
 
