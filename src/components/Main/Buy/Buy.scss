@@ -144,109 +144,13 @@
         margin-top: 10px;
         gap: 10px;
 
-        &-blue {
+        &-color {
             width: 20px;
             height: 20px;
-            background-color: blue;
             border: 1px solid;
             border-radius: 100%;
             border-color: black;
             cursor: pointer;
-
-            &:hover {
-                background-color: rgb(0, 0, 196);
-            }
-
-        }
-
-        &-black {
-            width: 20px;
-            height: 20px;
-            background-color: rgb(0, 0, 0);
-            border: 1px solid;
-            border-radius: 50%;
-            border-color: black;
-            cursor: pointer;
-
-            &:hover {
-                background-color: rgb(31, 31, 31);
-            }
-
-        }
-
-        &-red {
-            width: 20px;
-            height: 20px;
-            background-color: rgb(255, 0, 0);
-            border: 1px solid;
-            border-radius: 100%;
-            border-color: black;
-            cursor: pointer;
-
-            &:hover {
-                background-color: rgb(196, 0, 0);
-            }
-
-        }
-
-        &-white {
-            width: 20px;
-            height: 20px;
-            background-color: rgb(255, 255, 255);
-            border: 1px solid;
-            border-radius: 100%;
-            border-color: black;
-            cursor: pointer;
-
-            &:hover {
-                background-color: rgb(196, 196, 196);
-            }
-
-        }
-
-        &-green {
-            width: 20px;
-            height: 20px;
-            background-color: rgb(0, 255, 4);
-            border: 1px solid;
-            border-radius: 100%;
-            border-color: black;
-            cursor: pointer;
-
-            &:hover {
-                background-color: rgb(20, 196, 0);
-            }
-
-        }
-
-        &-yellow {
-            width: 20px;
-            height: 20px;
-            background-color: rgb(238, 255, 0);
-            border: 1px solid;
-            border-radius: 100%;
-            border-color: black;
-            cursor: pointer;
-
-            &:hover {
-                background-color: rgb(196, 193, 0);
-            }
-
-        }
-
-        &-pink {
-            width: 20px;
-            height: 20px;
-            background-color: rgb(255, 0, 251);
-            border: 1px solid;
-            border-radius: 100%;
-            border-color: black;
-            cursor: pointer;
-
-            &:hover {
-                background-color: rgb(196, 0, 176);
-            }
-
         }
 
     }
