@@ -23,7 +23,7 @@ const Main = ({ cart, setCart, products }) => {
 
       <section className='Home'>
         <h1>Онлайн магазин</h1>
-        <p>Одежда</p>
+        <p>Женской нижнего белья</p>
       </section>
 
       <div className="container">
