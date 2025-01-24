@@ -5,517 +5,90 @@ import icon from '../../img/png-klev-club-gikq-p-ikonka-garantiya-kachestva-png-
 import logo from '../../img/Снимок_экрана_2024-12-17_000646-removebg-preview (2).png';
 import wallet from '../../img/png-transparent-computer-icons-credit-card-card-security-code-debit-card-credit-card-text-logo-sign-removebg-preview 1.png';
 import human from '../../img/6596121 1.png';
-import item from '../../img/H20c9d9bb99974e729c20451549fd58cfD.jpg_640x640.avif';
-import item2 from '../../img/images (1).png';
-import item3 from '../../img/png-klev-club-qqbw-p-tsifra-3-png-3.png';
-import item4 from '../../img/images (2).png';
 
-const Buy = ({ cart, setCart }) => {
+
+const Buy = ({ cart, setCart, products, buySelectedTovar, setBuySelectedTovar }) => {
 
   const { id } = useParams();
+  const [mainImage, setMainImage] = useState("");
+  const [currentImages, setCurrentImages] = useState([]);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [value, setValue] = useState(1);
+  const [limitReached, setLimitReached] = useState(false);
 
-  const [tovar, setTovar] = useState([
-    {
-      id: 1,
-      name: "товар 1",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 2,
-      name: "товар 2",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 3,
-      name: "товар 3",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 4,
-      name: "товар 4",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 5,
-      name: "товар 5",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 6,
-      name: "товар 6",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 7,
-      name: "товар 7",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 8,
-      name: "товар 8",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 9,
-      name: "товар 9",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 10,
-      name: "товар 10",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 11,
-      name: "товар 11",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
-    },
-    {
-      id: 12,
-      name: "товар 12",
-      title: "Хорошое качество",
-      price: 670,
-      description: "Черный костюм с высоким горлом, выполненный из утепленной ангоры на флисе. Модель с прямой юбкой миди длины на резинке, декорированной разрезом. Верх костюма свободного кроя с манжетами и длинными приспущенными с пройм рукавами.",
-      images: [
-        item,
-        item2,
-        item3,
-        item4,
-      ],
-      colors: [
-        { color: "blue", available: true },
-        { color: "black", available: true },
-        { color: "red", available: true },
-        { color: "white", available: true },
-        { color: "green", available: true },
-        { color: "yellow", available: true },
-        { color: "pink", available: true },
-      ],
-      availableSizes: [
-        { size: 'S', available: true },
-        { size: 'M', available: true },
-        { size: 'L', available: true },
-        { size: 'XL', available: true },
-        { size: 'XLL', available: true },
-      ],
-      about: [
-        "Бренд: zara",
-        "Материал: Ангора",
-        "Состав: 85% ангора",
-      ],
-      chistka: [
-        "Только ручная стирка",
-        "Не отбеливать",
-        "Гладить запрещено",
-        "Барабанная сушка запрещена",
-      ],
+  const handleBuyTovar = () => {
+    if (selectedColor && selectedSize) {
+      const order = {
+        id: tovar.id,
+        name: tovar.name,
+        description: tovar.description,
+        color: selectedColor.color,
+        images: selectedColor.images,
+        size: selectedSize,
+        price: tovar.price,
+        count: value,
+        totalPrice: buyTovar,
+        about: tovar.about,
+        clean: tovar.chistka,
+      };
+      setBuySelectedTovar((prevOrders) => [...prevOrders, order]);
+    } else {
+      alert("Пожалуйста, выберите цвет и размер перед заказом.");
     }
-  ]);
-  const [mainImage, setMainImage] = useState('');
+  };
 
+  const findNextAvailableProduct = (currentId) => {
+    const currentIndex = products.findIndex(product => product.id === currentId);
+    for (let i = currentIndex + 1; i < products.length; i++) {
+      const product = products[i];
+      const availableColor = product.colors.find(color => color.count > 0);
+      if (availableColor) {
+        return product;
+      }
+    }
+    return null;
+  };
+
+  const tovar = products.find((product) => product.id === parseInt(id));
+  
   useEffect(() => {
-    const selectedProduct = tovar.find((tovar) => tovar.id === parseInt(id));
-    setTovar(selectedProduct);
-    if (selectedProduct) {
-      setMainImage(selectedProduct.images[0]);
+    window.scrollTo(0, 0);
+    if (tovar) {
+      const availableColors = tovar.colors.filter((color) => color.count > 0);
+      if (availableColors.length > 0) {
+        const firstColor = availableColors[0]; 
+        setCurrentImages(firstColor.images);
+        setMainImage(firstColor.images[0]);
+        setSelectedColor(firstColor);
+      } else {
+        const nextProduct = findNextAvailableProduct(tovar.id);
+        if (nextProduct) {
+          setSelectedColor(nextProduct.colors.find(color => color.count > 0));
+        }
+      }
     }
-  }, [id]);
+  }, [tovar, products]);
 
-  if (!tovar || !tovar.availableSizes) {
-    return <div>Загрузка...</div>;
+  if (!tovar || (tovar && tovar.colors.filter(color => color.count > 0).length === 0)) {
+    return <div>Нет доступных цветов для данного товара.</div>;
   }
 
   const handleImageClick = (image) => {
     setMainImage(image);
   };
 
-  const availableSizes = tovar.availableSizes.filter(size => size.available);
+  const handleColorClick = (color) => {
+    setCurrentImages(color.images);
+    setMainImage(color.images[0]);
+    setSelectedColor(color);
+    setLimitReached(false);
+    setValue(1);
+
+    if (value > color.count) {
+      setValue(color.count);
+    }
+  };
 
   const handleAddToCart = (product) => {
     if (!cart.find(item => item.id === product.id)) {
@@ -523,6 +96,52 @@ const Buy = ({ cart, setCart }) => {
     }
   };
 
+  const handleDecrease = () => {
+    if (value > 1) {
+      setValue(value - 1);
+    }
+  };
+
+  const handleMultiply = () => {
+    if (selectedColor) {
+      const availableCount = selectedColor.count;
+      if (value + 1 <= availableCount) {
+        setValue(value + 1);
+        setLimitReached(false);
+      } else {
+        setLimitReached(true);
+      }
+    }
+  };
+
+  const handleInputChange = (e) => {
+    const inputValue = e.target.value;
+    if (selectedColor) {
+      const availableCount = selectedColor.count;
+
+      if (/^\d*$/.test(inputValue)) {
+        const numericValue = parseInt(inputValue, 10);
+        if (numericValue >= 1 && numericValue <= availableCount) {
+          setValue(numericValue);
+          setLimitReached(false);
+        } else if (numericValue > availableCount) {
+          setValue(availableCount);
+          setLimitReached(true);
+        } else {
+          setValue(1);
+          setLimitReached(false);
+        }
+      }
+    }
+  };
+
+  const handleSizeClick = (size) => {
+    setSelectedSize(size);
+  };
+
+  const buyTovar = tovar.price * value;
+
+  const availableSizes = tovar.availableSizes.filter(size => size.available);
   const isInCart = cart.some(item => item.id === tovar.id);
 
   return (
@@ -549,11 +168,18 @@ const Buy = ({ cart, setCart }) => {
 
           <div className="SingleItem__photos">
             <div>
-              {tovar.images.map((images, idx) => (
-                <img key={idx} src={images} alt="item" onClick={() => handleImageClick(images)} />
+              {currentImages.map((image, idx) => (
+                <img
+                  key={idx}
+                  src={image}
+                  alt="item"
+                  onClick={() => handleImageClick(image)}
+                />
               ))}
             </div>
-            <img className='SingleItem__photos-img' src={mainImage} alt="item" />
+            {mainImage && (
+              <img className="SingleItem__photos-img" src={mainImage} alt="main item" />
+            )}
           </div>
 
           <div className="SingleItem__items">
@@ -561,12 +187,12 @@ const Buy = ({ cart, setCart }) => {
             <p className='SingleItem__items-title'>{tovar.title}</p>
 
             <div className="SingleItem__colors">
-              {tovar.colors.map((color, idx) =>
-                color.available && (
+            {tovar.colors.filter(color => color.count > 0).map((color, idx) => (
                   <button
                     key={idx}
                     className='SingleItem__colors-color'
-                    style={{ backgroundColor: color.color }}>
+                    style={{ backgroundColor: color.color }}
+                    onClick={() => handleColorClick(color)}>
                   </button>
                 )
               )}
@@ -577,19 +203,37 @@ const Buy = ({ cart, setCart }) => {
 
             <div className="SingleItem__sizes">
               {availableSizes.map((product, idx) => (
-                <button key={idx}>{product.size}</button>
+                <button onClick={() => handleSizeClick(product.size)}
+                  key={idx}
+                  style={{
+                    backgroundColor: selectedSize === product.size ? 'rgba(180, 180, 180, 0.5)' : 'transparent'
+                  }}>
+                  {product.size}</button>
               ))}
             </div>
 
             <div className='SingleItem__items-line'></div>
-            <p className='SingleItem__items-price'>{tovar.price} сом</p>
+
+            <div className="SingleItem__items-content">
+              <div className="SingleItem__items-counts">
+                <button onClick={handleDecrease} className="SingleItem__items-count">←</button>
+                <input type="text"
+                  value={value}
+                  onChange={handleInputChange} />
+                <button onClick={handleMultiply} className="SingleItem__items-count">→</button>
+              </div>
+              <p className='SingleItem__items-price'>{buyTovar} сом</p>
+            </div>
+            {limitReached && value >= selectedColor.count && (
+              <p className="SingleItem__items-reached">Вы достигли лимита по количеству этого товара.</p>
+            )}
 
             <div className="SingleItem__items-btns">
               <button onClick={() => handleAddToCart(tovar)}
                 className="SingleItem__items-cart">
                 {isInCart ? 'Добавлено' : 'В корзину'}
               </button>
-              <button className="SingleItem__items-btn">Заказать</button>
+              <button className="SingleItem__items-btn" onClick={handleBuyTovar}>Заказать</button>
             </div>
 
           </div>

@@ -22,10 +22,16 @@ const Header = () => {
             <Link className='Header__content-link' to={'/'}>
               <p>Главная</p>
             </Link>
-            <p>Контакты</p>
+            <Link className='Header__content-link' to='footer'>
+              <p>Контакты</p>
+            </Link>
             <div className="Header__content-img">
-              <Link to={'/Cart'}><img src={card} alt="" /></Link>
-              <Link to={'/Reg'}><img src={icon} alt="" /></Link>
+              <Link to={'/Cart'}>
+                <img src={card} alt="" />
+              </Link>
+              <Link>
+                <img src={icon} alt="" />
+              </Link>
             </div>
           </div>
 

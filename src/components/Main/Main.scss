@@ -89,6 +89,8 @@
         
         &-img {
             width: 235px;
+            border: 1px solid;
+            border-color: rgb(108, 108, 108);
             border-radius: 10px;
         }
 
@@ -204,6 +206,7 @@
 
 .Reviews {
     margin-top: 70px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     gap: 20px;

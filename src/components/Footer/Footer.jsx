@@ -6,7 +6,7 @@ import whatsapp from '../img/whatsapp_icon_161055 1.png';
 
 const Footer = () => {
     return (
-        <footer className='Footer'>
+        <footer id='footer' className='Footer'>
             <div className="container">
                 <div className="Footer__contacts">
 
