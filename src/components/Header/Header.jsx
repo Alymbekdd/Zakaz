@@ -22,7 +22,7 @@ const Header = () => {
             <Link className='Header__content-link' to={'/'}>
               <p>Главная</p>
             </Link>
-            <Link className='Header__content-link' to='footer'>
+            <Link className='Header__content-link'>
               <p>Контакты</p>
             </Link>
             <div className="Header__content-img">
